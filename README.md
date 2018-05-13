@@ -17,12 +17,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, index: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
+|name|string|null: false, unique: true, index: true|
 
 #### Association
-- has_many :groups, :members, :messages
+
+- has_many :groups
+- has_many :members
+- has_many :messages
 
 ### groupsテーブル
 
@@ -31,19 +32,22 @@ Things you may want to cover:
 |name|string|null: false|
 
 #### Association
+
 - belongs_to :user
-- has_many :members, :messages
+- has_many :members
+- has_many :messages
 
 ### membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-`foreign_key: true` option includes `index: true` option
+|user_id|integer|null: false, foreign_key: true, index: true|
+|group_id|integer|null: false, foreign_key: true, index: true|
 
 #### Association
-- belongs_to :user, :group
+
+- belongs_to :user
+- belongs_to :group
 
 ### messagesテーブル
 
@@ -51,14 +55,13 @@ Things you may want to cover:
 |------|----|-------|
 |body|text||
 |image|string||
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-`foreign_key: true` option includes `index: true` option
+|group_id|integer|null: false, foreign_key: true, index: true|
+|user_id|integer|null: false, foreign_key: true, index: true|
 
 #### Association
-- belongs_to :user, :group
 
-
+- belongs_to :user
+- belongs_to :group
 
 ## Database initialization
 
