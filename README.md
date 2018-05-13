@@ -21,7 +21,7 @@ Things you may want to cover:
 
 #### Association
 
-- has_many :groups
+- has_many :groups, through: :members
 - has_many :members
 - has_many :messages
 
@@ -33,7 +33,7 @@ Things you may want to cover:
 
 #### Association
 
-- belongs_to :user
+- has_many :user, through: :members
 - has_many :members
 - has_many :messages
 
