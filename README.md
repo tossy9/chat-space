@@ -1,6 +1,6 @@
 # Database design
 
-### usersテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -9,37 +9,37 @@
 |password|string|null: false|
  * the gem `devise` creates email and password
 
-#### Association
+### Association
 
 - has_many :groups, through: :members
 - has_many :members
 - has_many :messages
 
-### groupsテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 
-#### Association
+### Association
 
 - has_many :user, through: :members
 - has_many :members
 - has_many :messages
 
-### membersテーブル
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true, index: true|
 |group_id|integer|null: false, foreign_key: true, index: true|
 
-#### Association
+### Association
 
 - belongs_to :user
 - belongs_to :group
 
-### messagesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -48,7 +48,7 @@
 |group_id|integer|null: false, foreign_key: true, index: true|
 |user_id|integer|null: false, foreign_key: true, index: true|
 
-#### Association
+### Association
 
 - belongs_to :user
 - belongs_to :group
