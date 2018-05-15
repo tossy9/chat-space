@@ -18,6 +18,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true, index: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+ * the gem `devise` creates email and password
 
 #### Association
 
