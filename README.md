@@ -1,24 +1,55 @@
-# README
+# Database design
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+ * the gem `devise` creates email and password
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :members
+- has_many :groups, through: :members
+- has_many :messages
 
-* Configuration
+## groupsテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :members
+- has_many :user, through: :members
+- has_many :messages
 
-* Services (job queues, cache servers, search engines, etc.)
+## membersテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :group
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|body|text||
+|image|string||
+|group_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :group
+
