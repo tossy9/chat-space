@@ -167,17 +167,16 @@ p {
       height: 50px;
       line-height: 50px;
       font-size: 16px;
+      display: flex;
     }
     &__whitebox {
       background-color: $font-white;
     }
     &__input {
-      min-width: calc(100vw - #{$width-side-bar} - 235px);
-      float: left;
+      flex: auto;
       padding-left: 10px;
     }
     &__img {
-      float: left;
       padding: 0 10px 0 0;
       a:visited {
        color: $font-black-chat;
@@ -185,7 +184,6 @@ p {
     }
     &__btn {
       @include blue-block;
-      float: right;
       padding: 0 30px;
       margin-left: 15px;
     }
