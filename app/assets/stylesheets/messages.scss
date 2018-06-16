@@ -26,6 +26,10 @@ p {
   font-size: 1.0rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 .clearfix {
   &:after {
@@ -132,6 +136,9 @@ p {
       line-height: 40px;
       padding: 0 20px;
       margin-top: 28px;
+      a:visited {
+        color: $font-blue;
+      }
     }
   }
   .messages {
@@ -175,6 +182,7 @@ p {
     &__input {
       flex: auto;
       padding-left: 10px;
+      border: none;
     }
     &__img {
       padding: 0 10px 0 0;
@@ -186,6 +194,14 @@ p {
       @include blue-block;
       padding: 0 30px;
       margin-left: 15px;
+      a:visited {
+       color: $font-white;
+      }
+    }
+    #filesend {
+      display: none;
     }
   }
 }
+
+
