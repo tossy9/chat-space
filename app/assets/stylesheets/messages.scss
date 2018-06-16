@@ -82,6 +82,9 @@ p {
       li {
         display: inline-block;
       }
+      a:visited {
+        color: $font-white;
+      }
     }
   }
   .groups {
@@ -163,6 +166,7 @@ p {
     &__contents {
       height: 50px;
       line-height: 50px;
+      font-size: 16px;
     }
     &__whitebox {
       background-color: $font-white;
@@ -175,6 +179,9 @@ p {
     &__img {
       float: left;
       padding: 0 10px 0 0;
+      a:visited {
+       color: $font-black-chat;
+      }
     }
     &__btn {
       @include blue-block;

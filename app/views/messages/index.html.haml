@@ -7,9 +7,11 @@
         tossy
       %ul.header__btns
         %li
-          = fa_icon("edit")
+          = link_to root_path do
+            = fa_icon("edit")
         %li
-          = fa_icon("cog")
+          = link_to root_path do
+            = fa_icon("cog")
     .groups
       %ul.groups__group
         %li.groups__name
@@ -59,7 +61,8 @@
         .form__input.form__whitebox
           type a message
         .form__img.form__whitebox
-          = fa_icon("image")
+          = link_to root_path do
+            = fa_icon("image")
         .form__btn
           Send
   .footer
