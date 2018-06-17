@@ -31,14 +31,6 @@ a {
 }
 
 
-.clearfix {
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-}
-
 // clearfix適用用のwrapperを用意
 .wrapper {
   @extend .clearfix;
