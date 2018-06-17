@@ -38,24 +38,30 @@
       .header__contents.header__btn.btn
         = link_to "Edit", "#"
     .messages
-      %h2.messages__user
-        eto
-      %h5.messages__timestamp
-        2018/06/13 23:02
-      %h4.messages__body
-        good!
-      %h2.messages__user
-        tossy
-      %h5.messages__timestamp
-        2018/06/13 23:05
-      %h4.messages__body
-        night!
-      %h2.messages__user
-        tossy
-      %h5.messages__timestamp
-        2018/06/13 23:23
-      %h4.messages__body
-        寝ますzzz
+      .message
+        .message_disp_flex
+          .message__user
+            eto
+          .message__timestamp
+            2018/06/13 23:02
+        .message__body
+          good!
+      .message
+        .message_disp_flex
+          .message__user
+            tossy
+          .message__timestamp
+            2018/06/13 23:05
+        .message__body
+          night!
+      .message
+        .message_disp_flex
+          .message__user
+            tossy
+          .message__timestamp
+            2018/06/13 23:23
+        .message__body
+          寝ますzzz
     .form
       %form.form__contents{controller: "messages", action: "/", method: "post"}
         %input.form__input.form__whitebox{type: "text", name: "body", placeholder: "type a message"}

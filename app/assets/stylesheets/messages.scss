@@ -57,6 +57,12 @@ a {
   border: 1px solid $font-blue;
 }
 
+// flex適用box
+@mixin flex-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 // TODO Javascript/jQueryでのちに実装
 .alert-bar {
   @include blue-block;
@@ -148,20 +154,22 @@ a {
     padding: 46px 40px 0 40px;
     background-color: #EEE;
     color: $font-black-chat;
-    &__message {
-      padding-top: 46px;
-    }
-    &__user {
-      font-weight: bold;
-      display: inline;
-    }
-    &__timestamp {
-      color: $font-gray;
-      display: inline;
-      margin-left: 10px;
-    }
-    &__body {
-      padding: 10px 0 40px 0;
+    .message {
+      &_disp_flex {
+        @include flex-box;
+      }
+      &__user {
+        font-weight: bold;
+      }
+      &__timestamp {
+        margin: 4px 0 0 10px;
+        color: $font-gray;
+        font-size: 12px;
+      }
+      &__body {
+        padding: 10px 0 40px 0;
+        font-size: 14px;
+      }
     }
   }
   .form {
@@ -171,10 +179,10 @@ a {
     background-color: #DDD;
     color: $font-black-chat;
     &__contents {
+      @include flex-box;
       height: 50px;
-      line-height: 50px;
       font-size: 16px;
-      display: flex;
+      line-height: 50px;
     }
     &__whitebox {
       background-color: $font-white;
