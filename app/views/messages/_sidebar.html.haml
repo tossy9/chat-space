@@ -1,0 +1,12 @@
+.header
+  %h2.header__uname
+    tossy
+  %ul.header__btns
+    %li
+      = link_to "#" do
+        = fa_icon("edit")
+    %li
+      = link_to "#" do
+        = fa_icon("cog")
+.groups
+  = render 'messages/group', collection: @messages

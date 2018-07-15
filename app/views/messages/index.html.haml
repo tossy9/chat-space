@@ -2,71 +2,7 @@
   .alert-bar
     チャットグループが作成されました
   .side-bar
-    .header
-      %h2.header__uname
-        tossy
-      %ul.header__btns
-        %li
-          = link_to "#" do
-            = fa_icon("edit")
-        %li
-          = link_to "#" do
-            = fa_icon("cog")
-    .groups
-      %ul.groups__group
-        %li.groups__name
-          Mr.Children
-        %li.groups__last-message
-          ラララ
-      %ul.groups__group
-        %li.groups__name
-          安室奈美恵
-        %li.groups__last-message
-          Don't Wanna Cry
-      %ul.groups__group
-        %li.groups__name
-          GLAY
-        %li.groups__last-message
-          ここではないどこかへ
+    = render 'messages/sidebar', collection: @messages
   .chat
-    .header
-      .header__contents
-        %h1.header__group-name
-          Mr.Children
-        %h5.header__group-member
-          Member : eto tossy
-      .header__contents.header__btn.btn
-        = link_to "Edit", "#"
-    .messages
-      .message
-        .message_disp_flex
-          .message__user
-            eto
-          .message__timestamp
-            2018/06/13 23:02
-        .message__body
-          good!
-      .message
-        .message_disp_flex
-          .message__user
-            tossy
-          .message__timestamp
-            2018/06/13 23:05
-        .message__body
-          night!
-      .message
-        .message_disp_flex
-          .message__user
-            tossy
-          .message__timestamp
-            2018/06/13 23:23
-        .message__body
-          寝ますzzz
-    .form
-      %form.form__contents{controller: "messages", action: "/", method: "post"}
-        %input.form__input.form__whitebox{type: "text", name: "body", placeholder: "type a message"}
-        %label.form__img.form__whitebox
-          = fa_icon("image")
-          %input#filesend{type: "file", name: "image"}
-        %input.form__btn{type: "submit", value: "Send"}
+    = render 'messages/chat', collection: @messages
   .footer

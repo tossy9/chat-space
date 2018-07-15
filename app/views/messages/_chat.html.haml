@@ -1,0 +1,17 @@
+.header
+  .header__contents
+    %h1.header__group-name
+      Mr.Children
+    %h5.header__group-member
+      Member : eto tossy
+  .header__contents.header__btn.btn
+    = link_to "Edit", "#"
+.messages
+  = render 'messages/message', collection: @messages
+.form
+  %form.form__contents{controller: "messages", action: "/", method: "post"}
+    %input.form__input.form__whitebox{type: "text", name: "body", placeholder: "type a message"}
+    %label.form__img.form__whitebox
+      = fa_icon("image")
+      %input#filesend{type: "file", name: "image"}
+    %input.form__btn{type: "submit", value: "Send"}
