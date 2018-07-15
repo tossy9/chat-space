@@ -1,0 +1,18 @@
+// 背景が水色仕様の共通フォーマットを定義
+@mixin blue-block {
+  background-color: $font-blue;
+  color: $font-white;
+}
+
+// 文字が水色仕様の共通フォーマットを定義
+@mixin blue-border-block {
+  background-color: $font-white;
+  color: $font-blue;
+  border: 1px solid $font-blue;
+}
+
+// flex適用box
+@mixin flex-box {
+  display: flex;
+  flex-wrap: wrap;
+}

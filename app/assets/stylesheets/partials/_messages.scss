@@ -30,29 +30,9 @@ a {
   text-decoration: none;
 }
 
-
-// clearfix適用用のwrapperを用意
+// clearfix適用のwrapperを用意
 .wrapper {
   @extend .clearfix;
-}
-
-// 水色仕様のの共通フォーマットを定義
-@mixin blue-block {
-  background-color: $font-blue;
-  color: $font-white;
-}
-
-// 水色仕様のの共通フォーマットを定義
-@mixin blue-border-block {
-  background-color: $font-white;
-  color: $font-blue;
-  border: 1px solid $font-blue;
-}
-
-// flex適用box
-@mixin flex-box {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 // TODO Javascript/jQueryでのちに実装
