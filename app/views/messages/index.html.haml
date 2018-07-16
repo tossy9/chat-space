@@ -1,0 +1,8 @@
+.wrapper
+  .alert-bar
+    チャットグループが作成されました
+  .side-bar
+    = render 'messages/sidebar', collection: @messages
+  .chat
+    = render 'messages/chat', collection: @messages
+  .footer
