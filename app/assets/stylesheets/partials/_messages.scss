@@ -35,15 +35,6 @@ a {
   @extend .clearfix;
 }
 
-// TODO Javascript/jQueryでのちに実装
-.alert-bar {
-  @include blue-block;
-  width: 100%;
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-}
-
 // 左側のBlock
 .side-bar {
   float: left;
